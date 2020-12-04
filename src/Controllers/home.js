@@ -1,6 +1,6 @@
 module.exports = {
     index: (req, res) => {
-        res.send('Pagina de inicio...')
+        res.render('index')
     },
     create: (req, res) => {
         res.send(`Create`)
