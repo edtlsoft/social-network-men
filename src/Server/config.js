@@ -10,7 +10,6 @@ const express = require('express')
 
 const route = require('../Routes/index')
 
-const errorhandler = require('errorhandler')
 const errorHandler = require('errorhandler')
 
 module.exports = app => {
@@ -28,12 +27,15 @@ module.exports = app => {
 
     // Middlewares
     app.use(morgan('dev'))
+    
     app.use(multer({
-        dest: path.join(__dirname, 'public/upload/temp')
+        dest: path.join(__dirname, '../Public/upload/temp')
     }).single('image'))
+
     app.use(express.urlencoded({
         extended: false,
     }))
+    
     app.use(express.json())
 
     // Routes
